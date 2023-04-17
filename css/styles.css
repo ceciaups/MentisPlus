@@ -99,8 +99,10 @@ main > img {
   flex-flow: column nowrap;
   gap: 15px;
   height: calc(100% - 130px - 38px);
-  overflow-x: hidden;
   overflow-y: scroll;
+}
+.support-container::-webkit-scrollbar{
+  display: none;
 }
 .support-item {
   border: 1.5px solid var(--blue);
