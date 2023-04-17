@@ -1,0 +1,40 @@
+
+
+/********************************************************************
+ * TABLE OF CONTENTS
+ * ===================
+ * 1. GENERAL STYLES
+ * 2. HEADER STYLES
+ * 3. SUPPORT GROUPS STYLES
+ * 4. FOOTER STYLES
+ * 5. MEDIA QUERIES
+ * ===================
+ ********************************************************************/
+
+/* 1. GENERAL STYLES */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+:root {
+  --header-height: 50px;
+  --white: #FFFFFF;
+  --black: #000000;
+  --beige: #EADEC9;
+  --blue: #1B4079;
+  --blue-half: #1B40797F;
+}
+
+/* 2. HEADER STYLES */
+/* 3. SUPPORT GROUPS STYLES */
+/* 4. FOOTER STYLES */
+
+/* 5. MEDIA QUERIES STYLES */
+@media screen and (min-width: 425px) {
+  
+} 
