@@ -18,7 +18,7 @@ html {
   font-size: var(--size-m);
   display: grid;
   place-items: center;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -31,6 +31,18 @@ body {
   width: 100vw;
   max-width: 425px;
   background-color: var(--white);
+}
+h1 {
+  font-size: var(--size-xl);
+  font-weight: 600;
+}
+h2 {
+  font-size: var(--size-l);
+  font-weight: 700;
+}
+img {
+  display: block;
+  margin: auto;
 }
 :root {
   --header-height: 50px;
@@ -57,6 +69,79 @@ header {
 /* 3. SUPPORT GROUPS STYLES */
 main {
   height: calc(100vh - var(--header-height) - var(--footer-height));
+  color: var(--blue);
+  text-align: center;
+}
+main > img {
+  width: 130px;
+}
+.support-container {
+  padding: 20px 18.5px 15px 18.5px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  height: calc(100% - 130px - 38px);
+  overflow: scroll;
+}
+.support-item {
+  border: 1.5px solid var(--blue);
+  border-radius: 10px;
+  padding: 15px 0 14px 0;
+}
+.support-body {
+  display: flex;
+  gap: 13px;
+  text-align: left;
+  margin-top: 10px;
+}
+.support-image {
+  height: 85px;
+  width: 85px;
+  margin: 0 0 auto 16px;
+}
+.support-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2.5px;
+  margin-right: 10.5px;
+}
+.support-content > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.support-detail {
+  display: flex;
+  font-size: var(--size-s);
+  gap: 10px;
+}
+.support-date,
+.support-spot {
+  font-size: var(--size-s);
+  color: var(--blue-half);
+  font-weight: 800;
+}
+.support-button {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 7px;
+  color: var(--beige);
+  background-color: var(--blue);
+  font-weight: 700;
+  padding: 4px;
+  font-size: var(--size-m);
+}
+#support-load {
+  box-sizing: border-box;
+  border: 0.5px solid var(--blue);
+  border-radius: 10px;
+  color: var(--blue);
+  background-color: var(--beige);
+  font-weight: 700;
+  padding: 9.5px;
+  font-size: var(--size-m);
+  width: 102px;
+  margin: auto;
 }
 
 /* 4. FOOTER STYLES */
