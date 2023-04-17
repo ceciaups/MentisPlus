@@ -44,6 +44,10 @@ img {
   display: block;
   margin: auto;
 }
+button {
+  box-sizing: border-box;
+  border: none;
+}
 :root {
   --header-height: 50px;
   --footer-height: 80px;
@@ -68,10 +72,24 @@ header {
 
 /* 3. SUPPORT GROUPS STYLES */
 main {
+  position: relative;
   height: calc(100vh - var(--header-height) - var(--footer-height));
   color: var(--blue);
   text-align: center;
 }
+
+main > button {
+  position: absolute;
+  top: 12px;
+  background-color: var(--white);
+}
+.back {
+  left: 19px;
+}
+.filter {
+  right: 19px;
+}
+
 main > img {
   width: 130px;
 }
@@ -81,7 +99,8 @@ main > img {
   flex-flow: column nowrap;
   gap: 15px;
   height: calc(100% - 130px - 38px);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .support-item {
   border: 1.5px solid var(--blue);
@@ -122,8 +141,6 @@ main > img {
   font-weight: 800;
 }
 .support-button {
-  box-sizing: border-box;
-  border: none;
   border-radius: 7px;
   color: var(--beige);
   background-color: var(--blue);
@@ -132,7 +149,6 @@ main > img {
   font-size: var(--size-m);
 }
 #support-load {
-  box-sizing: border-box;
   border: 0.5px solid var(--blue);
   border-radius: 10px;
   color: var(--blue);
