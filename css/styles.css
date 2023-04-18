@@ -102,10 +102,9 @@ main > button {
 }
 
 #support-filter {
-  /* display: none; */
   position: absolute;
-  bottom: -546px;
-  height: 546px;
+  bottom: -100%;
+  height: min(100%, 546px);
   width: 100%;
   transition: all 2s;
   z-index: 1;
@@ -142,6 +141,10 @@ main > button {
   display: flex;
   flex-flow: column nowrap;
   gap: 25px;
+  overflow-y: scroll;
+}
+#filter-container::-webkit-scrollbar{
+  display: none;
 }
 .filter-item {
   display: flex;
@@ -163,6 +166,7 @@ main > button {
   border: 1px solid var(--blue);
   cursor: pointer;
   user-select: none;
+  transition: all 0.2s ease-in;
 }
 .filter-checked {
   background-color: var(--blue);
@@ -240,6 +244,7 @@ main > img {
   font-size: var(--size-m);
   width: 102px;
   margin: auto;
+  margin-top: 0;
 }
 
 /* 4. FOOTER STYLES */
