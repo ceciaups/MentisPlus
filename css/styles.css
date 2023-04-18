@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /********************************************************************
  * TABLE OF CONTENTS
@@ -40,6 +40,10 @@ h2 {
   font-size: var(--size-l);
   font-weight: 700;
 }
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
 img {
   display: block;
   margin: auto;
@@ -47,6 +51,7 @@ img {
 button {
   box-sizing: border-box;
   border: none;
+  cursor: pointer;
 }
 :root {
   --header-height: 50px;
@@ -59,15 +64,19 @@ button {
   --black: #000000;
   --beige: #EADEC9;
   --blue: #1B4079;
+  --blue-95: #1B4079F2;
   --blue-half: #1B40797F;
+  --blue-light: #BDD5ED;
 }
 
 /* 2. HEADER STYLES */
 header {
+  position: relative;
   height: var(--header-height);
   background-color: var(--blue);
   display: grid;
   place-items: center;
+  z-index: 1;
 }
 
 /* 3. SUPPORT GROUPS STYLES */
@@ -76,18 +85,86 @@ main {
   height: calc(100vh - var(--header-height) - var(--footer-height));
   color: var(--blue);
   text-align: center;
+  z-index: 0;
 }
 
 main > button {
   position: absolute;
   top: 12px;
   background-color: var(--white);
+  z-index: 1;
 }
 .back {
   left: 19px;
 }
 .filter {
   right: 19px;
+}
+
+#support-filter {
+  /* display: none; */
+  position: absolute;
+  bottom: -546px;
+  height: 546px;
+  width: 100%;
+  transition: all 2s;
+  z-index: 1;
+}
+.filter-show {
+  bottom: 0 !important;
+}
+#filter-header {
+  background-color: var(--blue);
+  height: 42px;
+  border-radius: 15px 15px 0 0;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: var(--size-l);
+  border-bottom: 1px solid #FFFFFF33;
+}
+#filter-header > button {
+  background-color: transparent;
+  color: var(--blue-light);
+  font-weight: 700;
+}
+#filter-header > h2 {
+  color: var(--white);
+}
+#filter-container {
+  height: calc(100% - 42px);
+  background-color: var(--blue-95);
+  color: var(--white);
+  text-align: left;
+  padding: 14px 19px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+}
+.filter-item {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+.filter-choices {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 6px;
+  color: var(--blue);
+  font-size: var(--size-l);
+  font-weight: 600;
+}
+.filter-choice {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+.filter-checked {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--white);
 }
 
 main > img {
@@ -164,9 +241,11 @@ main > img {
 
 /* 4. FOOTER STYLES */
 footer {
+  position: relative;
   height: var(--footer-height);
   background-color: var(--blue);
   color: var(--white);
+  z-index: 1;
 }
 nav {
   width: 100%;
