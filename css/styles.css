@@ -160,6 +160,9 @@ main > button {
   background-color: var(--white);
   border-radius: 5px;
   padding: 5px 8px;
+  border: 1px solid var(--blue);
+  cursor: pointer;
+  user-select: none;
 }
 .filter-checked {
   background-color: var(--blue);
