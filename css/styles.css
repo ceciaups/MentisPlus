@@ -245,6 +245,7 @@ main > img {
   width: 102px;
   margin: auto;
   margin-top: 0;
+  order: 100;
 }
 
 /* 4. FOOTER STYLES */

@@ -41,9 +41,56 @@ function saveFilter() {
       filters.push(i);
     }
   }
-  
-  // apply filter
+
   let support = document.getElementsByClassName("support-item");
+  // apply sorting
+  let filter = filters.find(filter => (filter >= 0 && filter < 2));
+  if (filter == 0) {
+    let startDate = document.getElementsByClassName("support-date");
+    let date = [];
+    let index = [];
+    for (let i = 0; i < startDate.length; i++) {
+      date[i] = Date.parse(startDate[0].innerHTML.substring(12));
+    }
+    for (let i = 0; i < date.length; i++) {
+      index[i] = 0;
+      for (let j = 0; j < date.length; j++) {
+        if (i != j) {
+          if (date[i] == date[j] && i > j) {
+            index[i] += 1;
+          }
+          index[i] += date[i] > date[j] ? 1 : 0;
+        }
+      }
+    }
+    for (let i = 0; i < support.length; i++) {
+      support[i].style.order = index[i];
+    }
+  }
+  else if (filter == 1) {
+    let duration = document.getElementsByClassName("support-duration");
+    let hour = [];
+    let index = [];
+    for (let i = 0; i < duration.length; i++) {
+      hour[i] = parseFloat(duration[i].innerText.split(" ")[0]);
+    }
+    for (let i = 0; i < hour.length; i++) {
+      index[i] = 0;
+      for (let j = 0; j < hour.length; j++) {
+        if (i != j) {
+          if (hour[i] == hour[j] && i > j) {
+            index[i] += 1;
+          }
+          index[i] += hour[i] > hour[j] ? 1 : 0;
+        }
+      }
+    }
+    for (let i = 0; i < support.length; i++) {
+      support[i].style.order = index[i];
+    }
+  }
+
+  // apply filter
   for (let i = 0; i < support.length; i++) {
     let isLocation = false;
     let isDate = false;
@@ -52,15 +99,16 @@ function saveFilter() {
     // Location
     if (filters.some(filter => (filter >= 2 && filter < 4))) {
       let location = support[i].getElementsByClassName("support-location");
+      location = location[0].innerText;
       let filter = filters.find(filter => (filter >= 2 && filter < 4));
 
       if (filter == 2) {
-        if (location[0].innerText == "Remote") {
+        if (location == "Remote") {
           isLocation = true;
         }
       }
       else if (filter == 3) {
-        if (location[0].innerText == "On-site") {
+        if (location == "On-site") {
           isLocation = true;
         }
       }
